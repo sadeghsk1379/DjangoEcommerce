@@ -1,21 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
-from . models import Category , Product
-
-def categories(request):
-     return {
-           'categories' :  Category.objects.all()
-     }
-            
+from .models import Category, Product
 
 
-def all_products(request):
-    products = Product.objects.all()
+def product_all(request):
+    products = Product.products.all()
     return render(request, 'store/home.html', {'products' : products})
 
 def product_detail(requset , slug):
       product = get_object_or_404(Product, slug=slug, in_stock=True)
-      return render(requset, 'store/products/detail.html',{'product': product})
+      return render(requset, 'store/products/single.html',{'product': product})
       
       
 def category_list(request , category_slug):
