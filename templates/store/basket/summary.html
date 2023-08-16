@@ -58,7 +58,7 @@
   </div>
 </main>
 
-{% comment %} <script>
+ <script>
   // Delete Item
   $(document).on('click', '.delete-button', function (e) {
     e.preventDefault();
@@ -81,7 +81,7 @@
   })
 
   // Update Item
-  $(document).on('click', '.update-button', function (e) {
+   $(document).on('click', '.update-button', function (e) {
     e.preventDefault();
     var prodid = $(this).data('index');
     $.ajax({
@@ -100,6 +100,6 @@
       error: function (xhr, errmsg, err) {}
     });
   })
-</script> {% endcomment %}
+</script> 
 
 {% endblock %}
